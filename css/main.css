@@ -31,9 +31,20 @@ header {
     display: grid;
 }
 
+.main-container.hide-mode .main-img-gallery {
+    /* hide gallery after select img*/
+    display: none;
+}
+
+.main-container.hide-mode .canvas-container {
+    /* display canvas after select img*/
+    display: flex;
+}
+
 .canvas-container {
     padding: 10px;
     margin: 0;
+    display: none;
 }
 
 .main-img-gallery {
@@ -57,7 +68,7 @@ header {
 footer {
     background-color: rgb(255, 166, 34);
     text-align: center;
-    height: 80px;
+    height: 50px;
     width: 100%;
     position: fixed;
     bottom: 0;

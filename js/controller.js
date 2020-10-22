@@ -16,11 +16,12 @@ function onOpenEditor(imgId) {
 function onOpenGallery() {
     //need to poen gallery & close editor if we creating meme
     //openGallery();
+    randerImg();
     closeEditor();
 }
 
 function closeEditor() {
     //need to close editor by click on gallery
-    var elContainer = document.querySelector('.main-header');
-    elContainer.classList.remove('edit-meme');
+    var elContainer = document.querySelector('.main-container');
+    elContainer.classList.remove('hide-mode');
 }

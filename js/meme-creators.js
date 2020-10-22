@@ -4,8 +4,8 @@ var gCtx;
 var gIdx = 0;
 
 function openEditor() {
-    var elContainer = document.querySelector('.main-header');
-    elContainer.classList.add('edit-meme');
+    var elContainer = document.querySelector('.main-container');
+    elContainer.classList.add('hide-mode');
 }
 
 function setCanvas() {
