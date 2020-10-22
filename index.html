@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Meme Generator</title>
+</head>
+
+<body onload="init()">
+    <!-- body-head -->
+    <header class="main-header">
+        <div class="page-name">MY Memes</div>
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li>
+                    <a class="navbar-btn Gallery" href="#" onclick="onOpenGallery()">Gallery</a>
+                </li>
+                <li>
+                    <a class="navbar-btn About" href="#">About</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- body-main -->
+    <main class="main-body">
+        <div class="main-container">
+            <div class="main-img-gallery"></div>
+
+            <div class="canvas-container">
+                <canvas id="my-canvas" height="500" width="500" onmousemove="moveTxt(event)"></canvas>
+            </div>
+        </div>
+    </main>
+
+
+
+    <!-- footer -->
+    <footer>blalala creat footer</footer>
+    <!-- script -->
+    <script src="js/storage-service.js"></script>
+    <script src="js/imgs-service.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/meme-creators.js"></script>
+</body>
+
+</html>
