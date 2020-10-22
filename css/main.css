@@ -63,6 +63,13 @@ header {
 }
 
 
+/* Canvas-Tools */
+
+.text-meme {
+    border: solid 1.5px rgb(160, 158, 158);
+}
+
+
 /* FOOTER */
 
 footer {

@@ -34,6 +34,20 @@ function moveTxt(event) {
     return null;
 }
 
+function drawText(text, x, y) {
+    gCtx.strokeStyle = 'red';
+    gCtx.fillStyle = 'blue';
+    gCtx.lineWidth = '2';
+    gCtx.font = '48px Ariel';
+    gCtx.textAlign = 'start';
+    gCtx.fillText(text, x, y);
+    gCtx.strokeText(text, x, y);
+}
+
+function draw(ev) {
+    const { offsetX, offsetY } = ev;
+    drawText('add text here', offsetX, offsetY);
+}
 
 
 
