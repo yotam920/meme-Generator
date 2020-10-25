@@ -29,35 +29,81 @@ function createMeme(imgId) {
 
 }
 
-function moveTxt(event) {
-    //move the text on the meme by mouse move
-    return null;
-}
 
 function drawText(text, x, y) {
-    gCtx.strokeStyle = 'red';
-    gCtx.fillStyle = 'blue';
+    gCtx.strokeStyle = getColorTxt();
+    gCtx.fillStyle = getColorFillTxt();
+    gCtx.font = `${getTxtFontSize()}px ${getFontTxt()}`
     gCtx.lineWidth = '2';
-    gCtx.font = '48px Ariel';
-    gCtx.textAlign = 'start';
+    // gCtx.textAlign = 'start';
+    gCtx.textAlign = getTxtAlign();
+    console.log('font:', gCtx.font);
     gCtx.fillText(text, x, y);
     gCtx.strokeText(text, x, y);
 }
 
 function draw(ev) {
     const { offsetX, offsetY } = ev;
-    drawText('add text here', offsetX, offsetY);
+    drawText(gMeme.lines[0].txt, offsetX, offsetY);
 }
 
-
-
-//download the canvas drawing 
-// add download button 
+//download the canvas drawing
 function downloadCanvas(elLink) {
     gIdx++;
+    console.log(elLink)
     const data = gCanvas.toDataURL();
-    console.log(data);
+    console.log('data:', data);
     elLink.href = data;
     let str = `myMeme${gIdx}.jpg`;
     elLink.download = str;
+    downloadImg(data);
+}
+
+
+function downloadImg(elLink) {
+    var imgContent = elLink;
+    elLink.href = `${imgContent}`;
+}
+
+//clear all the canvas
+//add button
+function clearCanvas() {
+    gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
+}
+
+
+function addText(txt) {
+    if (gMeme.lines.length < 1) return;
+    gMeme.lines[gMeme.selectedLineIdx].txt = txt;
+}
+
+
+function getMemeText() {
+    return gMeme.lines[gMeme.selectedLineIdx].txt;
+}
+
+function getColorTxt() {
+    return gMeme.lines[gMeme.selectedLineIdx].colorTxt;
+}
+
+function getColorFillTxt() {
+    return gMeme.lines[gMeme.selectedLineIdx].fillTxt;
+}
+
+function getTxtFontSize() {
+    return gMeme.lines[gMeme.selectedLineIdx].sizeTxt;
+}
+
+function getFontTxt() {
+    return gMeme.lines[gMeme.selectedLineIdx].fontTxt;
+}
+
+function getTxtAlign() {
+    return gMeme.lines[gMeme.selectedLineIdx].align;
+}
+
+function deleteTxt() {
+    if (gMeme.lines.length === 0) return;
+    gMeme.lines.splice(gMeme.selectedLineIdx, 1);
+    if (gMeme.selectedLineIdx > 0) gMeme.selectedLineIdx -= 1;
 }

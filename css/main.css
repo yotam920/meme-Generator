@@ -65,6 +65,42 @@ header {
 
 /* Canvas-Tools */
 
+.canvas-tools {
+    position: absolute;
+    right: 150px;
+    width: 400px;
+    height: 300px;
+    /* border: 3px solid gray; */
+}
+
+.btn {
+    right: 50px;
+    width: 50px;
+    margin: 5px;
+    border: 1px solid gray;
+}
+
+.btn-txt-change-pos {
+    position: absolute;
+    margin-top: 10px;
+}
+
+.btn-txt-change-shape {
+    position: absolute;
+    margin-top: 50px;
+}
+
+.btn-txt-font {
+    position: absolute;
+    margin-top: 90px;
+}
+
+.btn-meme-operation {
+    position: absolute;
+    margin-top: 130px;
+    width: 90px;
+}
+
 .text-meme {
     border: solid 1.5px rgb(160, 158, 158);
 }

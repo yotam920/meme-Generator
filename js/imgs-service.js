@@ -20,7 +20,7 @@ function createImgs() {
 }
 
 function getImgById(id) {
-    return gImgs.find(img => img.id === id)
+    return gImgs.find(img => img.id === id);
 }
 
 var gMeme = {
@@ -30,6 +30,9 @@ var gMeme = {
         txt: 'I never eat Falafel',
         size: 20,
         align: 'left',
-        color: 'red'
+        colorTxt: 'red',
+        fillTxt: 'red',
+        fontTxt: 'Ariel',
+        sizeTxt: 48
     }]
 }

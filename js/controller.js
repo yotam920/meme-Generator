@@ -15,7 +15,6 @@ function onOpenEditor(imgId) {
 
 function onOpenGallery() {
     //need to poen gallery & close editor if we creating meme
-    //openGallery();
     randerImg();
     closeEditor();
 }

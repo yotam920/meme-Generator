@@ -9,13 +9,13 @@
 </head>
 
 <body onload="init()">
-    <!-- body-head -->
+    <!-- Body-Head -->
     <header class="main-header">
         <div class="page-name">MY Memes</div>
         <nav class="navbar">
             <ul class="navbar-list">
                 <li>
-                    <a class="navbar-btn Gallery" href="#" onclick="onOpenGallery()">My-Gallery</a>
+                    <a class="navbar-btn Gallery" href="#" onclick="onOpenGallery()">MOVE-TO-Gallery</a>
                 </li>
                 <li>
                     <a class="navbar-btn About" href="#">About</a>
@@ -23,29 +23,70 @@
             </ul>
         </nav>
     </header>
-    <!-- body-main -->
+    <!-- Body-Main -->
     <main class="main-body">
         <div class="main-container">
-            <div class="main-img-gallery"></div>
+            <section class="main-img-gallery"></section>
 
-            <div class="canvas-container">
+            <section class="canvas-container">
                 <canvas id="my-canvas" height="400" width="500" onclick="draw(event)" onmousemove="moveTxt(event)"></canvas>
-                <div class="canvas-tools">
-                    <input type="text" name="text-meme" onchange="onEditText(this.value)" oninput="onEditText(this.value)" placeholder="create your mame">
-                </div>
-            </div>
+                <section class="canvas-tools">
+                    <label for="add-text-meme"></label>
+                    <input type="text" name="add-text-meme" oninput="onAddText(this.value)" onchange="onAddText(this.value)" placeholder="create your mame">
+                    <section class="btn-txt-change-pos">
+                        <button class="btn txt-pos-btn" onclick="onChangeTxtPos(1)">⬆️</button>
+                        <button class="btn txt-pos-btn" onclick="onChangeTxtPos(-1)">⬇️</button>
+                        <button class="btn txt-pos-btn" onclick="onAddNewTxt()">➕</button>
+                        <button class="btn txt-pos-btn" onclick="onDeleteTxt()">🗑️<im</button>
+                    </section>
+                    <section class="btn-txt-change-shape">
+                        <button class="btn txt-shape-btn" onclick="onChangeTxtFontSize(1)">🗚</button>
+                        <button class="btn txt-shape-btn" onclick="onChangeTxtFontSize(-1)">🗛</button>
+                        <button class="btn txt-shape-btn" onclick="onChangeTxtAlign('left')">left</button>
+                        <button class="btn txt-shape-btn" onclick="onChangeTxtAlign('center')">center</button>
+                        <button class="btn txt-shape-btn" onclick="onChangeTxtAlign('right')">right</button>
+                    </section>
+                    <section class="btn-txt-font">
+                        <select name="fonts" onchange="onSetFontTxt(this.value)">
+                            <option value="Ariel">Ariel</option>
+                            <option value="Ariel">Calibri</option>
+                            <option value="Ariel">Cambria</option>
+                            <option value="Impact">David</option>
+                        </select>
+                        <input type="color" class="btn txt-set-color" onchange="onSetColorTxt(this.value)">🖌️</button>
+                        <input type="color" class="btn txt-set-color" onchange="onSetColorFillTxt(this.value)">🎨</button>
+                    </section>
+                    <section class="btn-meme-operation">
+                        <button class="btn btn-operation" onclick="downloadCanvas(this)">download</button>
+                        <button class="btn btn-operation" onclick="downloadImg(this)" download="a.gif">download</button>
+                        <a href="#" onclick="downloadImg(this)" download="a.gif">
+                            Download Img
+                        </a>
+                    </section>
+
+                </section>
+                <!-- canvas-tools -->
+            </section>
         </div>
+        <!-- end main-container -->
     </main>
 
 
 
-    <!-- footer -->
-    <footer>blalala creat footer</footer>
-    <!-- script -->
+    <!-- Footer -->
+    <footer>
+        <li class="list-inline-item">
+            <a href="https://www.linkedin.com/in/yotam-barak-3106b21a3/">
+                <i class="fa fa-linkedin"></i>
+            </a>
+        </li>
+    </footer>
+    <!-- Script -->
     <script src="js/storage-service.js"></script>
     <script src="js/imgs-service.js"></script>
     <script src="js/main.js"></script>
     <script src="js/controller.js"></script>
+    <script src="js/meme-service.js"></script>
     <script src="js/meme-creators.js"></script>
 </body>
 
